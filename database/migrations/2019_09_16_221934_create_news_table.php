@@ -20,9 +20,9 @@ class CreateNewsTable extends Migration
             $table->integer('author_id')->default(0);
             $table->text('short_text');
             $table->longText('text');
-            $table->dateTime('created_time');
-            $table->dateTime('posted_time');
-            $table->integer('posted',false,true)->deleted(0);
+            $table->dateTime('created_time')->nullable();
+            $table->dateTime('updated_time')->nullable();
+            $table->integer('posted',false,true)->default(0);
             $table->integer('deleted',false,true)->default(0);
         });
     }
